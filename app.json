@@ -12,7 +12,7 @@
     "env": {
         "BOT_TOKEN": {
             "description": "Enter your Bot Token Here. Get it from @Botfather",
-            "value": "5478138308:AAHzeG6Cy1AW0peuwacPAzSI0jbN1zCmV_c",
+            "value": "5410317396:AAF8WpwyhRJ52_ISdKWX3pb73ASYRH6Iegs",
             "required": true
         },
         "ADMIN_ID": {
