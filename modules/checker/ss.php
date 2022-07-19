@@ -218,40 +218,6 @@ $phone = $matches1[1][0];
 preg_match_all("(\"postcode\":(.*),\")siU", $get, $matches1);
 $postcode = $matches1[1][0];
 
-// Proxy Configuration
-$rp1 = array(
-    1 => 'URPROXY',
-    2 => 'URPROXY',
-    3 => 'URPROXY',
-    4 => 'URPROXY',
-    5 => 'URPROXY',
-    ); 
-    $rpt = array_rand($rp1);
-    $rotate = $rp1[$rpt];
-
-
-$ip = array(
-  1 => 'socks5://p.webshare.io:1080',
-  2 => 'http://p.webshare.io:80',
-    ); 
-    $socks = array_rand($ip);
-    $socks5 = $ip[$socks];
-
-$url = "https://api.ipify.org/";
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_PROXY, $socks5);
-curl_setopt($ch, CURLOPT_PROXYUSERPWD, $rotate); 
-$ip1 = curl_exec($ch);
-curl_close($ch);
-ob_flush();
-if (isset($ip1)){
-$ip = "Proxy live";
-}
-if (empty($ip1)){
-$ip = "Proxy Dead:[".$rotate."]";
-}
 
 // Generate MUID GUID
 
