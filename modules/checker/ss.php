@@ -1,11 +1,5 @@
 <?php
 
-// Switchblade CC Checker - Developed from 1 August 2021 by @rizzyneck
-// Base from Andrymata - Made with ❤
-// Last updated 18 September 2021
-// Webhook: https://api.telegram.org/bot<token>/setwebhook?url=<url>
-
-// BOT API Configuration
 $botToken = "5410317396:AAF8WpwyhRJ52_ISdKWX3pb73ASYRH6Iegs"; #<------------------- PUT YOUR TOKEN HERE------------->#
 $website = "https://api.telegram.org/bot".$botToken;
 error_reporting(0);
