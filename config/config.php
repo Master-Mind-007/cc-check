@@ -31,7 +31,7 @@ $config['adminID'] = "1191266989";
 | ID can be obtained from https://telegram.dog/BotFather
 |
 */
-$config['logsID'] =  "1191266989";
+$config['logsID'] =  "-1001776887004";
 
 /*
 |--------------------------------------------------------------------------
