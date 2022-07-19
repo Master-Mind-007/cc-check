@@ -162,7 +162,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             
             if(!$stripeerror){
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_3LNKBaCPBTfxNhAO1deVQB0d/confirm');
+                curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_3LNL19CPBTfxNhAO1MVEpLSx/confirm');
                 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
                 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
