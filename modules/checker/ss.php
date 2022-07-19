@@ -180,7 +180,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');                
                 curl_setopt($ch, CURLOPT_POSTFIELDS, "payment_method_data[type]=card&payment_method_data[billing_details][name]=$name+$last&payment_method_data[billing_details][address][city]=New+York&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][address][line1]=13th+Ave+street&payment_method_data[billing_details][address][line2]=&payment_method_data[billing_details][address][postal_code]=$zip&payment_method_data[billing_details][address][state]=&payment_method_data[card][number]=$cc&payment_method_data[card][cvc]=$cvv&payment_method_data[card][exp_month]=$mes&payment_method_data[card][exp_year]=$ano&payment_method_data[guid]=$guid&payment_method_data[muid]=$muid&payment_method_data[sid]=$sid&payment_method_data[payment_user_agent]=stripe.js%2F3d0d0fc67%3B+stripe-js-v3%2F3d0d0fc67&payment_method_data[time_on_page]=$time&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_51GtEAVCPBTfxNhAOgG5TfwPQRmY59A8HluifMEKkTlNonq23OrPPKMTP1qnUJBcCUGqTn6CSlQbMsFRZPo8mD5Ac00ETfGI9dH&client_secret=pi_3LNKBaCPBTfxNhAO1deVQB0d_secret_LIMOPqayRhdMFn3jdWzflH9e7");
                 $result2 = curl_exec($ch);
-                $errormessage = trim(strip_tags(capture($result2,'"code":"','"')));
+                $errormessage2 = trim(strip_tags(capture($result2,'"code":"','"')));
                 $declinecode = trim(strip_tags(capture($result2,'"decline_code":"','"')));
                 $declinemessage = trim(strip_tags(capture($result2,'"message":"','"')));
             }
@@ -203,7 +203,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
-Response -» $errormessage
+Response -» $errormessage2 | $errormessage
 Decline Error -» $declinecode
 Result -» $declinemessage
 Gateway -» Stripe Auth
