@@ -22,7 +22,7 @@
         },
         "LOGS_DUMP_ID": {
             "description": "Enter the ID of a Group/Channel to store Logs",
-            "value": -1001776887004"",
+            "value": "-1001776887004",
             "required": true
         },
         "DB_HOST": {
