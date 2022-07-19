@@ -203,7 +203,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
-Response -» $errormessage2 | $errormessage
+Response -» $errormessage2 | $errormessage | $result1 | $result2
 Decline Error -» $declinecode
 Result -» $declinemessage
 Gateway -» Stripe Auth
