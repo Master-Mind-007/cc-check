@@ -207,8 +207,8 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
-Response -» $result1 | $cc $mes $ano $time
-Response -» $result2 | 
+Response -» $result1 |
+Response -» $result2 |
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
