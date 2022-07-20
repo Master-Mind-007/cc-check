@@ -263,7 +263,8 @@ sendMessage($chat_id, ''.$result2.'');
 sendMessage($chat_id, ''.$result2.'');
 }
 curl_close($ch);
-}
-}
+            }
+        }
+    }
 }
 ?>
