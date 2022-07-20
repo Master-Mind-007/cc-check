@@ -132,23 +132,21 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             }
             
             $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_3LNOv3CPBTfxNhAO1oovvvkR/confirm');
-curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-curl_setopt($ch, CURLOPT_HEADER, 0);
-curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Host: api.stripe.com',
-        'Accept: application/json',
-        'Accept-Language: en-US,en;q=0.5',
-        'Accept-Encoding: gzip, deflate, br',
-        'Origin: https://js.stripe.com',
-        'Content-Type: application/x-www-form-urlencoded',
-        'Referer: https://js.stripe.com/',
-        'Sec-Fetch-Dest: empty',
-        'Sec-Fetch-Mode: no-cors',
-        'Sec-Fetch-Site: cross-site',
-        'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0',
+            curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_3LNOv3CPBTfxNhAO1oovvvkR/confirm');
+            curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Host: api.stripe.com',
+            'Accept: application/json',
+            'Accept-Language: en-US,en;q=0.5',
+            'Accept-Encoding: gzip, deflate, br',
+            'Origin: https://js.stripe.com',
+            'Content-Type: application/x-www-form-urlencoded',
+            'Referer: https://js.stripe.com/',
+            'Sec-Fetch-Dest: empty',
+            'Sec-Fetch-Mode: no-cors',
+            'Sec-Fetch-Site: cross-site',
+            'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0',
    ));
 
    curl_setopt($ch, CURLOPT_POSTFIELDS, 'payment_method_data[type]=card&payment_method_data[billing_details][name]=$name+$last&payment_method_data[billing_details][address][city]=New+York&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][address][line1]=13th+Ave+Street&payment_method_data[billing_details][address][line2]=&payment_method_data[billing_details][address][postal_code]=$zip&payment_method_data[billing_details][address][state]=&payment_method_data[card][number]=$cc&payment_method_data[card][cvc]=$cvv&payment_method_data[card][exp_month]=$mes&payment_method_data[card][exp_year]=$ano&payment_method_data[guid]=$guid&payment_method_data[muid]=$muid&payment_method_data[sid]=$sid&payment_method_data[payment_user_agent]=stripe.js%2F3d0d0fc67%3B+stripe-js-v3%2F3d0d0fc67&payment_method_data[time_on_page]=$time&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_51GtEAVCPBTfxNhAOgG5TfwPQRmY59A8HluifMEKkTlNonq23OrPPKMTP1qnUJBcCUGqTn6CSlQbMsFRZPo8mD5Ac00ETfGI9dH&client_secret=pi_3LNOv3CPBTfxNhAO1oovvvkR_secret_ZBrH6AcOGd6f41OWHwT8mRT9i');
