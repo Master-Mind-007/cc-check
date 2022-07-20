@@ -241,4 +241,5 @@ sendMessage($chatId, ''.$result2.'');
 curl_close($ch);
 }
 }
+}
 ?>
