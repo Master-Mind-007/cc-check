@@ -207,8 +207,8 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
-Response -» $result1 | type=card&card[number]=$cc&card[cvc]=$cvv&card[exp_month]=$mes&card[exp_year]=$ano&billing_details[address][postal_code]=$zip&guid=$guid&muid=$muid&sid=$sid
-Response -» $result2 | payment_method_data[type]=card&payment_method_data[billing_details][name]=$name+$last&payment_method_data[billing_details][address][city]=New+York&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][address][line1]=13th+Ave+Street&payment_method_data[billing_details][address][line2]=&payment_method_data[billing_details][address][postal_code]=$zip&payment_method_data[billing_details][address][state]=&payment_method_data[card][number]=$cc&payment_method_data[card][cvc]=$cvv&payment_method_data[card][exp_month]=$mes&payment_method_data[card][exp_year]=$ano&payment_method_data[guid]=$guid&payment_method_data[muid]=$muid&payment_method_data[sid]=$sid&payment_method_data[payment_user_agent]=stripe.js%2F3d0d0fc67%3B+stripe-js-v3%2F3d0d0fc67&payment_method_data[time_on_page]=$time&expected_payment_method_type=card
+Response -» $result1 | 
+Response -» $result2 | 
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
