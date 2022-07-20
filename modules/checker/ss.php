@@ -173,7 +173,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'Accept-Encoding: gzip, deflate, br',
                 'Origin: https://www.charitywater.org',
                 'Content-Type: application/x-www-form-urlencoded',
-                'Referer: https://www.charitywater.org/',
+                'Referer: https://www.charitywater.org/donate',
                 'Sec-Fetch-Dest: empty',
                 'Sec-Fetch-Mode: no-cors',
                 'Sec-Fetch-Site: cross-site',
