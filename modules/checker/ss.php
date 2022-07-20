@@ -154,15 +154,13 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
             curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
             curl_setopt($ch, CURLOPT_POSTFIELDS, 'payment_method_data[type]=card&payment_method_data[billing_details][name]=$name+$last&payment_method_data[billing_details][address][city]=New+York&payment_method_data[billing_details][address][country]=US&payment_method_data[billing_details][address][line1]=13th+Ave+Street&payment_method_data[billing_details][address][line2]=&payment_method_data[billing_details][address][postal_code]=$zip&payment_method_data[billing_details][address][state]=&payment_method_data[card][number]=$cc&payment_method_data[card][cvc]=$cvv&payment_method_data[card][exp_month]=$mes&payment_method_data[card][exp_year]=$ano&payment_method_data[guid]=$guid&payment_method_data[muid]=$muid&payment_method_data[sid]=$sid&payment_method_data[payment_user_agent]=stripe.js%2F3d0d0fc67%3B+stripe-js-v3%2F3d0d0fc67&payment_method_data[time_on_page]=$time&expected_payment_method_type=card&use_stripe_sdk=true&key=pk_live_51GtEAVCPBTfxNhAOgG5TfwPQRmY59A8HluifMEKkTlNonq23OrPPKMTP1qnUJBcCUGqTn6CSlQbMsFRZPo8mD5Ac00ETfGI9dH&client_secret=pi_3LNOv3CPBTfxNhAO1oovvvkR_secret_ZBrH6AcOGd6f41OWHwT8mRT9i');
-
- $result1 = curl_exec($ch);
- $cvc_check = trim(strip_tags(getStr($result1,'"cvc_check":"','"')));
- $decline_check = trim(strip_tags(getStr($result1,'"decline_code":"','"')));
- $info = curl_getinfo($ch);
- $time = $info['total_time'];
- $httpCode = $info['http_code'];
- $time = substr($time, 0, 4);
- curl_close($ch);
+            $result1 = curl_exec($ch);
+            $cvc_check = trim(strip_tags(getStr($result1,'"cvc_check":"','"')));
+            $decline_check = trim(strip_tags(getStr($result1,'"decline_code":"','"')));
+            $info = curl_getinfo($ch);
+            $time = $info['total_time'];
+            $httpCode = $info['http_code'];
+            $time = substr($time, 0, 4);
 
 // Responses
 
