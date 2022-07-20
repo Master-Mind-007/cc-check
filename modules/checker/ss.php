@@ -207,7 +207,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
-Response -» $result1 | $result1
+Response -» $result1 | $result2
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
@@ -234,7 +234,7 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» API Down ❌
-Response -» $result1 | $result1
+Response -» $result1 | $result2
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
@@ -261,7 +261,7 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» Dead ❌
-Response -» $result1 | $result1
+Response -» $result1 | $result2
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
