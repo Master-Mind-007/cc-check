@@ -253,10 +253,10 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -»</b> Dead ❌
-Response -» $result2
+<b>Response -»</b> $result2 | $result1
 Gateway -» 1 Charge
 Time -» <b>$time</b><b>s</b>
-------- Bin Info -------</b>
+<b>------- Bin Info -------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
 <b>Type -»</b> $typename
