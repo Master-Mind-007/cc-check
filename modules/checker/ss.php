@@ -202,18 +202,19 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'chat_id'=>$chat_id,
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
-<b>Status -» CVV or CCN ✅
-Response -» $result2 | $errorcode | $errormessage
-Gateway -» Stripe Auth 1
+<b>Status -» APPROVED ✅
+Gateway -» 1💲 Auth Charge
 Time -» <b>$time</b><b>s</b>
-------- Bin Info -------</b>
+<b>--------------- 🌐 RESPONSE --------------</b>
+$result2
+<b>------------------ 💳 Bin Info -----------------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
 <b>Type -»</b> $typename
 <b>Currency -»</b> $currency
 <b>Country -»</b> $cname ($emoji - 💲$currency)
 <b>Issuers Contact -»</b> $phone
-<b>----------------------------</b>
+<b------------------------------------------------------b>
 <b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
 <b>Bot By: <a href='t.me/MasterMind_Mikhil'>𝐌𝐚𝐬𝐭𝐞𝐫𝐌𝐢𝐧𝐝</a></b>",
                 'parse_mode'=>'html',
@@ -228,17 +229,20 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» API Down ❌
-Response -» $result2 | $errorcode | $errormessage
-Gateway -» Stripe Auth 1
+Response -» $errormessage
+Code -» $errorcode
+Gateway -» 1💲 Auth Charge
 Time -» <b>$time</b><b>s</b>
-------- Bin Info -------</b>
+<b>--------------- 🌐 RESPONSE --------------</b>
+$result2
+<b>------------------ 💳 Bin Info -----------------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
 <b>Type -»</b> $typename
 <b>Currency -»</b> $currency
 <b>Country -»</b> $cname ($emoji - 💲$currency)
 <b>Issuers Contact -»</b> $phone
-<b>----------------------------</b>
+<b------------------------------------------------------b>
 <b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
 <b>Bot By: <a href='t.me/MasterMind_Mikhil'>𝐌𝐚𝐬𝐭𝐞𝐫𝐌𝐢𝐧𝐝</a></b>",
                 'parse_mode'=>'html',
@@ -253,17 +257,20 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» Dead ❌
-Response -» $result2 | $errorcode | $errormessage
-Gateway -» Stripe Auth 1
+Response -» $errormessage
+Code -» $errorcode
+Gateway -» 1💲 Auth Charge
 Time -» <b>$time</b><b>s</b>
-------- Bin Info -------</b>
+<b>--------------- 🌐 RESPONSE --------------</b>
+$result2
+<b>------------------ 💳 Bin Info -----------------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
 <b>Type -»</b> $typename
 <b>Currency -»</b> $currency
 <b>Country -»</b> $cname ($emoji - 💲$currency)
 <b>Issuers Contact -»</b> $phone
-<b>----------------------------</b>
+<b------------------------------------------------------b>
 <b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
 <b>Bot By: <a href='t.me/MasterMind_Mikhil'>𝐌𝐚𝐬𝐭𝐞𝐫𝐌𝐢𝐧𝐝</a></b>",
                 'parse_mode'=>'html',
