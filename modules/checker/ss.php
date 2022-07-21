@@ -262,7 +262,7 @@ Time -» <b>$time</b><b>s</b>
 ⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» $result2
 ⚜️ 𝑻𝒊𝒎𝒆 𝑺𝒑𝒆𝒏𝒕 -» $time<b>s<?b>
 ⚜️ 𝑪𝒉𝒆𝒄𝒌𝒆𝒅 𝑩𝒚: <a href='tg://user?id=$userId'>$firstname</a>
-⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a>",
+⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>𝐌𝐚𝐬𝐭𝐞𝐫𝐌𝐢𝐧𝐝</a>",
                 'parse_mode'=>'html',
                 'disable_web_page_preview'=>'true'
                 
