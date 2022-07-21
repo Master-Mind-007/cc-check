@@ -205,9 +205,9 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
 <b>Status -» APPROVED ✅
 Gateway -» 1💲 Auth Charge
 Time -» <b>$time</b><b>s</b>
-<b>--------------- 🌐 RESPONSE --------------</b>
+<b>--------------- RESPONSE --------------</b>
 $result2
-<b>------------------ 💳 Bin Info -----------------</b>
+<b>------------------ Bin Info -----------------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
 <b>Type -»</b> $typename
@@ -233,9 +233,9 @@ Response -» $errormessage
 Code -» $errorcode
 Gateway -» 1💲 Auth Charge
 Time -» <b>$time</b><b>s</b>
-<b>--------------- 🌐 RESPONSE --------------</b>
+<b>--------------- RESPONSE --------------</b>
 $result2
-<b>------------------ 💳 Bin Info -----------------</b>
+<b>------------------ Bin Info -----------------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
 <b>Type -»</b> $typename
@@ -261,9 +261,9 @@ Response -» $errormessage
 Code -» $errorcode
 Gateway -» 1💲 Auth Charge
 Time -» <b>$time</b><b>s</b>
-<b>--------------- 🌐 RESPONSE --------------</b>
+<b>--------------- RESPONSE --------------</b>
 $result2
-<b>------------------ 💳 Bin Info -----------------</b>
+<b>------------------ Bin Info -----------------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
 <b>Type -»</b> $typename
