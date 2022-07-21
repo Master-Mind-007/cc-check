@@ -191,7 +191,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             ###END OF CHECKER PART###
             
             
-            if(strpos($result2, 'client_secret')) {
+            if(strpos($result2, 'payment_intent')) {
               addTotal();
               addUserTotal($userId);
               addCVV();
