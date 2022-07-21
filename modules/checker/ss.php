@@ -191,7 +191,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             ###END OF CHECKER PART###
             
             
-            if(strpos($result2, 'client_secret')) {
+            if(strpos($result2, 'intenet')) {
               addTotal();
               addUserTotal($userId);
               addCVV();
@@ -201,23 +201,21 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
               bot('editMessageText',[
                 'chat_id'=>$chat_id,
                 'message_id'=>$messageidtoedit,
-                'text'=>"<b>Card:</b> <code>$lista</code>
-<b>Status -» CVV or CCN ✅
-Response -» $result1 | $result2 | $errorcode | $errormessage
-Gateway -» Stripe Auth 1
-Time -» <b>$time</b><b>s</b>
-
-------- Bin Info -------</b>
-<b>Bank -»</b> $bank
-<b>Brand -»</b> $schemename
-<b>Type -»</b> $typename
-<b>Currency -»</b> $currency
-<b>Country -»</b> $cname ($emoji - 💲$currency)
-<b>Issuers Contact -»</b> $phone
-<b>----------------------------</b>
-
-<b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
-<b>Bot By: <a href='t.me/ninjanaveen'>ɴɪɴᴊᴀ ɴᴀᴠᴇᴇɴ</a></b>",
+                'text'=>"<b>⚜️ 𝑺𝒕𝒂𝒕𝒖𝒔 -» 𝑨𝒑𝒑𝒓𝒐𝒗𝒆𝒅 ✅
+<b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» 𝒔𝒕𝒂𝒕𝒖𝒔 = 𝒔𝒖𝒄𝒄𝒆𝒆𝒅𝒆𝒅 
+<b>⚜️ CC -»</b> <code>$lista</code>
+<b>⚜️ 𝑮𝑨𝑻𝑬 -» WateCharity.org ♻️
+<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
+<b>⚜️ 𝑩𝒂𝒏𝒌:</b> $bank
+<b>⚜️ 𝑪𝒐𝒖𝒏𝒕𝒓𝒚:</b> $cname ($emoji - 💲$currency)
+<b>⚜️ 𝑰𝒏𝒇𝒐: CREDIT - $schemename - $typename
+<b>╚━━━━━━「 𝑰𝑵𝑭𝑶 」━━━━━━╝
+<b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» $result2
+<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
+<b>⚜️ 𝑻𝒊𝒎𝒆 𝑺𝒑𝒆𝒏𝒕 -» <b>$time</b><b>s</b>
+<b>⚜️ 𝑪𝒉𝒆𝒄𝒌𝒆𝒅 𝑩𝒚: <a href='tg://user?id=$userId'>$firstname</a></b>
+<b>⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a></b>
+  ╚━━━━━━「мαѕтєямιη∂」━━━━━━╝",
                 'parse_mode'=>'html',
                 'disable_web_page_preview'=>'true'
                 
@@ -228,23 +226,20 @@ Time -» <b>$time</b><b>s</b>
               bot('editMessageText',[
                 'chat_id'=>$chat_id,
                 'message_id'=>$messageidtoedit,
-                'text'=>"<b>Card:</b> <code>$lista</code>
-<b>Status -» API Down ❌
-Response -» $result1 | $result2 | $errorcode | $errormessage
-Gateway -» Stripe Auth 1
-Time -» <b>$time</b><b>s</b>
-
-------- Bin Info -------</b>
-<b>Bank -»</b> $bank
-<b>Brand -»</b> $schemename
-<b>Type -»</b> $typename
-<b>Currency -»</b> $currency
-<b>Country -»</b> $cname ($emoji - 💲$currency)
-<b>Issuers Contact -»</b> $phone
-<b>----------------------------</b>
-
-<b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
-<b>Bot By: <a href='t.me/ninjanaveen'>ɴɪɴᴊᴀ ɴᴀᴠᴇᴇɴ</a></b>",
+                'text'=>"<b>⚜️ 𝑺𝒕𝒂𝒕𝒖𝒔 -» API DONW ❌
+<b>⚜️ CC -»</b> <code>$lista</code>
+<b>⚜️ 𝑮𝑨𝑻𝑬 -» WateCharity.org ♻️
+<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
+<b>⚜️ 𝑩𝒂𝒏𝒌:</b> $bank
+<b>⚜️ 𝑪𝒐𝒖𝒏𝒕𝒓𝒚:</b> $cname ($emoji - 💲$currency)
+<b>⚜️ 𝑰𝒏𝒇𝒐: CREDIT - $schemename - $typename
+<b>╚━━━━━━「 𝑰𝑵𝑭𝑶 」━━━━━━╝
+<b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» $result2
+<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
+<b>⚜️ 𝑻𝒊𝒎𝒆 𝑺𝒑𝒆𝒏𝒕 -» <b>$time</b><b>s</b>
+<b>⚜️ 𝑪𝒉𝒆𝒄𝒌𝒆𝒅 𝑩𝒚: <a href='tg://user?id=$userId'>$firstname</a></b>
+<b>⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a></b>
+  ╚━━━━━━「мαѕтєямιη∂」━━━━━━╝",
                 'parse_mode'=>'html',
                 'disable_web_page_preview'=>'true'
                 
@@ -255,23 +250,22 @@ Time -» <b>$time</b><b>s</b>
               bot('editMessageText',[
                 'chat_id'=>$chat_id,
                 'message_id'=>$messageidtoedit,
-                'text'=>"<b>Card:</b> <code>$lista</code>
-<b>Status -» Dead ❌
-Response -» $result1 | $result2 | $errorcode | $errormessage
-Gateway -» Stripe Auth 1
-Time -» <b>$time</b><b>s</b>
-
-------- Bin Info -------</b>
-<b>Bank -»</b> $bank
-<b>Brand -»</b> $schemename
-<b>Type -»</b> $typename
-<b>Currency -»</b> $currency
-<b>Country -»</b> $cname ($emoji - 💲$currency)
-<b>Issuers Contact -»</b> $phone
-<b>----------------------------</b>
-
-<b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
-<b>Bot By: <a href='t.me/ninjanaveen'>ɴɪɴᴊᴀ ɴᴀᴠᴇᴇɴ</a></b>",
+                'text'=>"<b>⚜️ 𝑺𝒕𝒂𝒕𝒖𝒔 -» 𝑪𝑨𝑹𝑫 𝑫𝑬𝑪𝑳𝑰𝑵𝑬𝑫 ❌
+<b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -»</b> $errormessage
+<b>⚜️ 𝑪𝒐𝒅𝒆 -»</b> $errocode
+<b>⚜️ CC -»</b> <code>$lista</code>
+<b>⚜️ 𝑮𝑨𝑻𝑬 -» WateCharity.org ♻️
+<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
+<b>⚜️ 𝑩𝒂𝒏𝒌:</b> $bank
+<b>⚜️ 𝑪𝒐𝒖𝒏𝒕𝒓𝒚:</b> $cname ($emoji - 💲$currency)
+<b>⚜️ 𝑰𝒏𝒇𝒐: CREDIT - $schemename - $typename
+<b>╚━━━━━━「 𝑰𝑵𝑭𝑶 」━━━━━━╝
+<b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» $result2
+<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
+<b>⚜️ 𝑻𝒊𝒎𝒆 𝑺𝒑𝒆𝒏𝒕 -» <b>$time</b><b>s</b>
+<b>⚜️ 𝑪𝒉𝒆𝒄𝒌𝒆𝒅 𝑩𝒚: <a href='tg://user?id=$userId'>$firstname</a></b>
+<b>⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a></b>
+  ╚━━━━━━「мαѕтєямιη∂」━━━━━━╝",
                 'parse_mode'=>'html',
                 'disable_web_page_preview'=>'true'
                 
