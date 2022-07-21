@@ -191,7 +191,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             ###END OF CHECKER PART###
             
             
-            if(strpos($result2, 'intenet')) {
+            if(strpos($result2, 'client_secret')) {
               addTotal();
               addUserTotal($userId);
               addCVV();
