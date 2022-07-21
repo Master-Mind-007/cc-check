@@ -204,7 +204,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
 Response -» $result2
-Gateway -» Stripe Auth 1
+Gateway -» 1💲 Charge
 Time -» <b>$time</b><b>s</b>
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
@@ -229,7 +229,7 @@ Time -» <b>$time</b><b>s</b>
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» API Down ❌
 Response -» $result2
-Gateway -» Stripe Auth 1
+Gateway -» 1💲 Charge
 Time -» <b>$time</b><b>s</b>
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
@@ -251,18 +251,21 @@ Time -» <b>$time</b><b>s</b>
               bot('editMessageText',[
                 'chat_id'=>$chat_id,
                 'message_id'=>$messageidtoedit,
-                'text'=>"⚜️ 𝑺𝒕𝒂𝒕𝒖𝒔 -» 𝑪𝑨𝑹𝑫 𝑫𝑬𝑪𝑳𝑰𝑵𝑬𝑫 ❌
-⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» $errormessage
-⚜️ 𝑪𝒐𝒅𝒆 -» $errocode
-⚜️ CC -» <code>$lista</code>
-⚜️ 𝑮𝑨𝑻𝑬 -» WaterCharity ♻️
-⚜️ 𝑩𝒂𝒏𝒌: $bank
-⚜️ 𝑪𝒐𝒖𝒏𝒕𝒓𝒚: $cname ($emoji - 💲$currency)
-⚜️ 𝑰𝒏𝒇𝒐: CREDIT - $schemename - $typename
-⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» $result2
-⚜️ 𝑻𝒊𝒎𝒆 𝑺𝒑𝒆𝒏𝒕 -» $time<b>s<?b>
-⚜️ 𝑪𝒉𝒆𝒄𝒌𝒆𝒅 𝑩𝒚: <a href='tg://user?id=$userId'>$firstname</a>
-⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>𝐌𝐚𝐬𝐭𝐞𝐫𝐌𝐢𝐧𝐝</a>",
+                'text'=>"<b>Card:</b> <code>$lista</code>
+<b>Status -»</b> Dead ❌
+Response -» $result2
+Gateway -» 1💲 Charge
+Time -» <b>$time</b><b>s</b>
+------- Bin Info -------</b>
+<b>Bank -»</b> $bank
+<b>Brand -»</b> $schemename
+<b>Type -»</b> $typename
+<b>Currency -»</b> $currency
+<b>Country -»</b> $cname ($emoji - 💲$currency)
+<b>Issuers Contact -»</b> $phone
+<b>----------------------------</b>
+<b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
+<b>Bot By: <a href='t.me/MasterMind_Mikhil'>𝐌𝐚𝐬𝐭𝐞𝐫𝐌𝐢𝐧𝐝</a></b>",
                 'parse_mode'=>'html',
                 'disable_web_page_preview'=>'true'
                 
