@@ -204,7 +204,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
 Response -» $result2
-Gateway -» 1💲 Charge
+Gateway -» 1 Charge
 Time -» <b>$time</b><b>s</b>
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
@@ -229,7 +229,7 @@ Time -» <b>$time</b><b>s</b>
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» API Down ❌
 Response -» $result2
-Gateway -» 1💲 Charge
+Gateway -» 1 Charge
 Time -» <b>$time</b><b>s</b>
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
@@ -254,7 +254,7 @@ Time -» <b>$time</b><b>s</b>
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -»</b> Dead ❌
 Response -» $result2
-Gateway -» 1💲 Charge
+Gateway -» 1 Charge
 Time -» <b>$time</b><b>s</b>
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
