@@ -253,7 +253,7 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» Declined! ❌
-Response -» $errormessage2 | $errormessage | $result1 | $result2
+Response -» $errorcode | $errormessage | $result2
 Decline Error -» $declinecode
 Result -» $declinemessage
 Gateway -» Stripe Auth
