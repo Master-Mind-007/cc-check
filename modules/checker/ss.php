@@ -265,8 +265,7 @@ Time -» <b>$time</b><b>s</b>
 ╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝
 ⚜️ 𝑻𝒊𝒎𝒆 𝑺𝒑𝒆𝒏𝒕 -» $time<b>s<?b>
 ⚜️ 𝑪𝒉𝒆𝒄𝒌𝒆𝒅 𝑩𝒚: <a href='tg://user?id=$userId'>$firstname</a>
-⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a>
-╚━━━━━━「мαѕтєямιη∂」━━━━━━╝",
+⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a>",
                 'parse_mode'=>'html',
                 'disable_web_page_preview'=>'true'
                 
