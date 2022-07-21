@@ -203,10 +203,9 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
+Response -» $result2 | $errorcode | $errormessage
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
-------- Response Info -------</b>
-Response -» $result2
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
@@ -229,11 +228,9 @@ Response -» $result2
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» API Down ❌
+Response -» $result2 | $errorcode | $errormessage
 Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
-------- Response Info -------</b>
-<b>Error -»</b> $errormessage
-Response -» $result2
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
@@ -256,11 +253,9 @@ Response -» $result2
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» Dead ❌
-Gateway -» Charge Auth
+Response -» $result2 | $errorcode | $errormessage
+Gateway -» Stripe Auth 1
 Time -» <b>$time</b><b>s</b>
-------- Response Info -------</b>
-<b>Error -»</b> $errormessage
-Response -» $result2
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
