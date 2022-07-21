@@ -229,8 +229,8 @@ $result2
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» API Down ❌
-Response -» $errormessage
-Code -» $errorcode
+<b>Response -»</b> $errormessage
+<b>Code -»</b> $errorco
 Gateway -» 1💲 Auth Charge
 Time -» <b>$time</b><b>s</b>
 <b>--------------- RESPONSE --------------</b>
@@ -257,8 +257,8 @@ $result2
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» Dead ❌
-Response -» $errormessage
-Code -» $errorcode
+<b>Response -»</b> $errormessage
+<b>Code -»</b> $errorcode
 Gateway -» 1💲 Auth Charge
 Time -» <b>$time</b><b>s</b>
 <b>--------------- RESPONSE --------------</b>
