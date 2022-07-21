@@ -206,6 +206,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
 Response -» $result2
 Gateway -» 1💲 STRIPE
 Time -» <b>$time</b><b>s</b>
+
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
@@ -214,6 +215,7 @@ Time -» <b>$time</b><b>s</b>
 <b>Country -»</b> $cname ($emoji - 💲$currency)
 <b>Issuers Contact -»</b> $phone
 <b>----------------------------</b>
+
 <b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
 <b>Bot By: <a href='t.me/MasterMind_Mikhil'>𝐌𝐚𝐬𝐭𝐞𝐫𝐌𝐢𝐧𝐝</a></b>",
                 'parse_mode'=>'html',
@@ -231,6 +233,7 @@ Time -» <b>$time</b><b>s</b>
 Response -» $result2
 Gateway -» 1 Charge
 Time -» <b>$time</b><b>s</b>
+
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
@@ -239,6 +242,7 @@ Time -» <b>$time</b><b>s</b>
 <b>Country -»</b> $cname ($emoji - 💲$currency)
 <b>Issuers Contact -»</b> $phone
 <b>----------------------------</b>
+
 <b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
 <b>Bot By: <a href='t.me/MasterMind_Mikhil'>𝐌𝐚𝐬𝐭𝐞𝐫𝐌𝐢𝐧𝐝</a></b>",
                 'parse_mode'=>'html',
@@ -253,11 +257,12 @@ Time -» <b>$time</b><b>s</b>
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» Declined! ❌
-Response -» $errorcode | $errormessage | $result2
-Decline Error -» $declinecode
-Result -» $declinemessage
+Response -» $errormessage
+Decline Error -» $errorcode
+Result -» $result2
 Gateway -» 1💲 STRIPE
 Time -» <b>$time</b><b>s</b>
+
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
@@ -266,6 +271,7 @@ Time -» <b>$time</b><b>s</b>
 <b>Country -»</b> $cname ($emoji - 💲$currency)
 <b>Issuers Contact -»</b> $phone
 <b>----------------------------</b>
+
 <b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
 <b>Bot By: <a href='t.me/MasterMind_Mikhil'>𝐌𝐚𝐬𝐭𝐞𝐫𝐌𝐢𝐧𝐝</a></b>",
                 'parse_mode'=>'html',
