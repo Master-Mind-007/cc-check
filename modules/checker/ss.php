@@ -252,11 +252,13 @@ Time -» <b>$time</b><b>s</b>
                 'chat_id'=>$chat_id,
                 'message_id'=>$messageidtoedit,
                 'text'=>"<b>Card:</b> <code>$lista</code>
-<b>Status -»</b> Dead ❌
-<b>Response -»</b> $result2 | $result1
-Gateway -» 1 Charge
+<b>Status -» Declined! ❌
+Response -» $errormessage2 | $errormessage | $result1 | $result2
+Decline Error -» $declinecode
+Result -» $declinemessage
+Gateway -» Stripe Auth
 Time -» <b>$time</b><b>s</b>
-<b>------- Bin Info -------</b>
+------- Bin Info -------</b>
 <b>Bank -»</b> $bank
 <b>Brand -»</b> $schemename
 <b>Type -»</b> $typename
