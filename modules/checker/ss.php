@@ -251,21 +251,13 @@ Time -» <b>$time</b><b>s</b>
               bot('editMessageText',[
                 'chat_id'=>$chat_id,
                 'message_id'=>$messageidtoedit,
-                'text'=>"<b>Card:</b> <code>$lista</code>
-<b>Status -» Dead ❌
-Response -» $result2
-Gateway -» Stripe Auth 1
-Time -» <b>$time</b><b>s</b>
-------- Bin Info -------</b>
-<b>Bank -»</b> $bank
-<b>Brand -»</b> $schemename
-<b>Type -»</b> $typename
-<b>Currency -»</b> $currency
-<b>Country -»</b> $cname ($emoji - 💲$currency)
-<b>Issuers Contact -»</b> $phone
-<b>----------------------------</b>
-<b>Checked By <a href='tg://user?id=$userId'>$firstname</a></b>
-<b>Bot By: <a href='t.me/MasterMind_Mikhil'>𝐌𝐚𝐬𝐭𝐞𝐫𝐌𝐢𝐧𝐝</a></b>",
+                'text'=>"<b>⚜️ 𝑺𝒕𝒂𝒕𝒖𝒔 -»</b> 𝑪𝑨𝑹𝑫 𝑫𝑬𝑪𝑳𝑰𝑵𝑬𝑫 ❌%0A<b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -»</b> $errormessage
+%0A<b>⚜️ 𝑪𝒐𝒅𝒆 -»</b> $errocode
+%0A<b>⚜️ CC -»</b> <code>$lista</code>%0A<b>⚜️ 𝑮𝑨𝑻𝑬 -»</b> WaterCharity ♻️
+%0A╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝%0A<b>⚜️ 𝑩𝒂𝒏𝒌:</b> $bank%0A<b>⚜️ 𝑪𝒐𝒖𝒏𝒕𝒓𝒚:</b> $cname ($emoji - 💲$currency)%0A<b>⚜️ 𝑰𝒏𝒇𝒐:</b> CREDIT - $schemename - $typename
+%0A╚━━━━━━「 𝑰𝑵𝑭𝑶 」━━━━━━╝%0A<b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -»</b> $result2
+%0A╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝
+%0A<b>⚜️ 𝑻𝒊𝒎𝒆 𝑺𝒑𝒆𝒏𝒕 -»</b> <b>$time</b><b>s</b>%0A<b>⚜️ 𝑪𝒉𝒆𝒄𝒌𝒆𝒅 𝑩𝒚:</b> <a href='tg://user?id=$userId'>$firstname</a>%0A<b>⚜️ 𝑶𝒘𝒏𝒆𝒓:</b> <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a>",
                 'parse_mode'=>'html',
                 'disable_web_page_preview'=>'true'
                 
