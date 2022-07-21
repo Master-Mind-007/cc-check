@@ -205,17 +205,13 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
 <b>⚜️ 𝑺𝒕𝒂𝒕𝒖𝒔 -» 𝑨𝒑𝒑𝒓𝒐𝒗𝒆𝒅 ✅
 <b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» 𝒔𝒕𝒂𝒕𝒖𝒔 = 𝒔𝒖𝒄𝒄𝒆𝒆𝒅𝒆𝒅 
 <b>⚜️ 𝑮𝑨𝑻𝑬 -» WateCharity.org ♻️
-<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
 <b>⚜️ 𝑩𝒂𝒏𝒌:</b> $bank
 <b>⚜️ 𝑪𝒐𝒖𝒏𝒕𝒓𝒚:</b> $cname ($emoji - 💲$currency)
 <b>⚜️ 𝑰𝒏𝒇𝒐: CREDIT - $schemename - $typename
-<b>╚━━━━━━「 𝑰𝑵𝑭𝑶 」━━━━━━╝</b>
 <b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» $result2
-<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
 <b>⚜️ 𝑻𝒊𝒎𝒆 𝑺𝒑𝒆𝒏𝒕 -» <b>$time</b><b>s</b>
 <b>⚜️ 𝑪𝒉𝒆𝒄𝒌𝒆𝒅 𝑩𝒚: <a href='tg://user?id=$userId'>$firstname</a></b>
-<b>⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a></b>
-<b>╚━━━━━━「мαѕтєямιη∂」━━━━━━╝</b>",
+<b>⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a></b>",
                 'parse_mode'=>'html',
                 'disable_web_page_preview'=>'true'
                 
@@ -229,17 +225,13 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'text'=>"<b>⚜️ CC -»</b> <code>$lista</code>
 <b>⚜️ 𝑺𝒕𝒂𝒕𝒖𝒔 -» API DONW ❌
 <b>⚜️ 𝑮𝑨𝑻𝑬 -» WateCharity.org ♻️
-<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
 <b>⚜️ 𝑩𝒂𝒏𝒌:</b> $bank
 <b>⚜️ 𝑪𝒐𝒖𝒏𝒕𝒓𝒚:</b> $cname ($emoji - 💲$currency)
 <b>⚜️ 𝑰𝒏𝒇𝒐: CREDIT - $schemename - $typename
-<b>╚━━━━━━「 𝑰𝑵𝑭𝑶 」━━━━━━╝</b>
 <b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» $result2
-<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
 <b>⚜️ 𝑻𝒊𝒎𝒆 𝑺𝒑𝒆𝒏𝒕 -» <b>$time</b><b>s</b>
 <b>⚜️ 𝑪𝒉𝒆𝒄𝒌𝒆𝒅 𝑩𝒚: <a href='tg://user?id=$userId'>$firstname</a></b>
-<b>⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a></b>
-<b>╚━━━━━━「мαѕтєямιη∂」━━━━━━╝</b>",
+<b>⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a></b>",
                 'parse_mode'=>'html',
                 'disable_web_page_preview'=>'true'
                 
@@ -254,18 +246,13 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
 <b>⚜️ 𝑺𝒕𝒂𝒕𝒖𝒔 -» 𝑪𝑨𝑹𝑫 𝑫𝑬𝑪𝑳𝑰𝑵𝑬𝑫 ❌
 <b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -»</b> $errormessage
 <b>⚜️ 𝑪𝒐𝒅𝒆 -»</b> $errorcode
-<b>⚜️ 𝑮𝑨𝑻𝑬 -» WateCharity.org ♻️
-<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
-<b>⚜️ 𝑩𝒂𝒏𝒌:</b> $bank
+<b>⚜️ 𝑮𝑨𝑻𝑬 -» WateCharity.org ♻️<b>⚜️ 𝑩𝒂𝒏𝒌:</b> $bank
 <b>⚜️ 𝑪𝒐𝒖𝒏𝒕𝒓𝒚:</b> $cname ($emoji - 💲$currency)
 <b>⚜️ 𝑰𝒏𝒇𝒐: CREDIT - $schemename - $typename
-<b>╚━━━━━━「 𝑰𝑵𝑭𝑶 」━━━━━━╝</b>
 <b>⚜️ 𝑹𝒆𝒔𝒑𝒐𝒏𝒔𝒆 -» $result2
-<b>╚━━━━━━「 𝑫𝑬𝑻𝑨𝑰𝑳𝑺 」━━━━━━╝</b>
 <b>⚜️ 𝑻𝒊𝒎𝒆 𝑺𝒑𝒆𝒏𝒕 -» <b>$time</b><b>s</b>
 <b>⚜️ 𝑪𝒉𝒆𝒄𝒌𝒆𝒅 𝑩𝒚: <a href='tg://user?id=$userId'>$firstname</a></b>
-<b>⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a></b>
-<b>╚━━━━━━「мαѕтєямιη∂」━━━━━━╝</b>",
+<b>⚜️ 𝑶𝒘𝒏𝒆𝒓: <a href='t.me/MasterMind_Mikhil'>╰ 𝔪Ⓐᔕţ𝒆ℝᵐίⓃᗪ ╮</a></b>",
                 'parse_mode'=>'html',
                 'disable_web_page_preview'=>'true'
                 
