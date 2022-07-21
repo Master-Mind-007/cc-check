@@ -191,7 +191,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
             ###END OF CHECKER PART###
             
             
-            if(strpos($result2, 'payment_intent')) {
+            if(strpos($result2, 'paymentIntentClientSecret') {
               addTotal();
               addUserTotal($userId);
               addCVV();
@@ -204,7 +204,7 @@ if(strpos($message, "/ss ") === 0 || strpos($message, "!ss ") === 0){
                 'text'=>"<b>Card:</b> <code>$lista</code>
 <b>Status -» CVV or CCN ✅
 Response -» $result2
-Gateway -» 1 Charge
+Gateway -» 1💲 STRIPE
 Time -» <b>$time</b><b>s</b>
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
@@ -256,7 +256,7 @@ Time -» <b>$time</b><b>s</b>
 Response -» $errorcode | $errormessage | $result2
 Decline Error -» $declinecode
 Result -» $declinemessage
-Gateway -» Stripe Auth
+Gateway -» 1💲 STRIPE
 Time -» <b>$time</b><b>s</b>
 ------- Bin Info -------</b>
 <b>Bank -»</b> $bank
